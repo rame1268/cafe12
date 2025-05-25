@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MRM Cafe - Top Products</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf5;
+      padding: 40px;
+      color: #3e2c23;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #5a3e36;
+      font-size: 50px;
+    }
+
+    .product {
+      margin-bottom: 25px;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .progress-container {
+      background-color: #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 25px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      line-height: 25px;
+      color: white;
+      text-align: center;
+      font-weight: 600;
+      transition: width 1.2s ease;
+    }
+
+    .latte { background-color: #ffb347; }
+    .espresso { background-color: #8d6748; }
+    .cappuccino { background-color: #d6a27a; }
+    .mocha { background-color: #a0522d; }
+  </style>
+</head>
+<body>
+
+  <h1>Caffiend Lab – Most Sold Products</h1>
+
+  <div class="product">
+    <div class="label">Iced Caramel Latte</div>
+    <div class="progress-container">
+      <div class="progress-bar latte" id="latteBar">0%</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="label">Espresso</div>
+    <div class="progress-container">
+      <div class="progress-bar espresso" id="espressoBar">0%</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="label">Cappuccino</div>
+    <div class="progress-container">
+      <div class="progress-bar cappuccino" id="cappuccinoBar">0%</div>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="label">Mocha</div>
+    <div class="progress-container">
+      <div class="progress-bar mocha" id="mochaBar">0%</div>
+    </div>
+  </div>
+
+  <script>
+    function animateBar(id, value) {
+      const bar = document.getElementById(id);
+      let width = 0;
+      const interval = setInterval(() => {
+        if (width >= value) {
+          clearInterval(interval);
+        } else {
+          width++;
+          bar.style.width = width + "%";
+          bar.textContent = width + "%";
+        }
+      }, 15);
+    }
+
+    animateBar("latteBar", 78);       // Iced Caramel Latte
+    animateBar("espressoBar", 65);    // Espresso
+    animateBar("cappuccinoBar", 54);  // Cappuccino
+    animateBar("mochaBar", 48);       // Mocha
+  </script>
+
+</body>
+</html>

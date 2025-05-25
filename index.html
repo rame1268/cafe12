@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <p>
+        Seize the Exclusive Offer: Purchase the Classic Coffee & Enjoy a 25%
+        Flat Discount!
+        <a href="shop.html" class="btn">BUY NOW</a>
+      </p>
+    </header>
+
+    <nav class="navbar">
+      <img src="cafe123-removebg-preview.png" alt="Cafe Logo" width="250px" />
+      <a href="index.html">Home</a>
+      <a href="AboutUs.html">About Us</a>
+      <a href="progress.html">Progress</a>
+      <a href="shop.html">Shop</a>
+      <a href="Contact Us.html">Contact Us</a>
+      <a href="shop.html" class="btn">BUY NOW</a>
+      <a class="link1" href="https://www.instagram.com/"
+        ><img src="insta-removebg-preview.png" width="50px"
+      /></a>
+      <a class="link1" href="https://www.facebook.com/"
+        ><img
+          style="margin-bottom: 10px"
+          src="facebook-removebg-preview.png"
+          width="50px"
+      /></a>
+      <a class="link1" href="https://x.com/">
+        <img
+          style="margin-bottom: 4px"
+          src="tw-removebg-preview.png"
+          width="43px"
+        />
+      </a>
+    </nav>
+
+    <main>
+      <section class="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="Caffiend Lab.png" alt="Slide 1" /></div>
+          <div class="slide"><img src="IMG.webp" alt="Slide 2" /></div>
+          <div class="slide"><img src="cafe.jpg" alt="Slide 3" /></div>
+        </div>
+      </section>
+    </main>
+
+    <section class="para1">
+      <h1>Our Hot Products</h1>
+      <p class="about-text">
+        The Coffee is Fantastic!
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          viewBox="0 -960 960 960"
+          width="40px"
+          fill="#1f1f1f"
+          style="background-color: chocolate; border-radius: 40px"
+        >
+          <path
+            d="M160-120v-66.67h640V-120H160Zm154-146.67q-64 0-109-44.66Q160-356 160-420v-420h653.33q27.5 0 47.09 19.58Q880-800.83 880-773.33v146.66q0 27.5-19.58 47.09Q840.83-560 813.33-560h-90.66v140q0 64-45 108.67-45 44.66-109 44.66H314Zm0-66.66h254.65q35.02 0 61.18-26.17Q656-385.67 656-420v-353.33H226.67V-420q0 34.33 26.5 60.5T314-333.33Zm408.67-293.34h90.66v-146.66h-90.66v146.66ZM314-333.33h-87.33H656 314Z"
+          />
+        </svg>
+      </p>
+    </section>
+
+    <div class="card-grid">
+      <div class="card">
+        <img src="f1.jpg" alt="Nature" />
+        <div class="card-content">
+          <h3>Latte Cappucchino</h3>
+          <p>
+            Cappuccino — where bold espresso meets a cloud of velvet foam, and
+            the morning finally makes sense.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="f2.jpg" alt="City" />
+        <div class="card-content">
+          <h3>Vanilla Coffee</h3>
+          <p>
+            Vanilla coffee — smooth, sweet, and quietly addictive, like comfort
+            in a cup with a whisper of elegance.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="f3.jpg" alt="Tech" />
+        <div class="card-content">
+          <h3>Hazelnut Coffee</h3>
+          <p>
+            Hazelnut coffee — rich, nutty, and irresistibly warm, like a cozy
+            hug wrapped in flavor.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="f4.jpg" alt="Travel" />
+        <div class="card-content">
+          <h3>Classic Iced Coffee</h3>
+          <p>
+            Classic Iced Coffee — bold, chilled, and effortlessly cool, the
+            timeless fix for hot days and sharp minds.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="f5.jpg" alt="Food" />
+        <div class="card-content">
+          <h3>Cold Brew</h3>
+          <p>
+            Cold Brew — slow-crafted smoothness, bold flavor, and a chill that
+            awakens your senses without the rush.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="f6.jpg" alt="Art" />
+        <div class="card-content">
+          <h3>Iced Mocha</h3>
+          <p>
+            Iced Mocha — where rich chocolate meets bold espresso, cooled to
+            perfection for a sweet, energizing escape.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const cards = document.querySelectorAll(".card");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    </script>
+
+    <section style="box-sizing: border-box" class="about-section" id="about">
+      <div class="container" data-aos="fade-up">
+        <h2 class="section-title">
+          <a class="abouta" href="AboutUs.html">About Cafe</a>
+        </h2>
+        <p class="about-text">
+          Our Cafe, we believe coffee is more than just a drink — it's a moment
+          of connection, inspiration, and warmth. We source the finest beans
+          from around the world and roast them with love and expertise.
+        </p>
+        <p class="about-text">
+          Our journey began with a simple idea: to serve coffee that tells a
+          story. Whether you're starting your day or finding a moment to pause,
+          we're here to make every cup extraordinary.
+        </p>
+      </div>
+    </section>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <footer class="footer">
+      <h1>Best Coffee in Town</h1>
+      <p>&copy; 2025 All Rights Reserved Coffee Shop.</p>
+      <a href="https://www.instagram.com/"
+        ><img src="insta-removebg-preview.png" width="50px"
+      /></a>
+      <a href="https://www.facebook.com/"
+        ><img
+          style="margin-bottom: 10px"
+          src="facebook-removebg-preview.png"
+          width="50px"
+      /></a>
+      <a href="https://x.com/">
+        <img
+          style="margin-bottom: 4px"
+          src="tw-removebg-preview.png"
+          width="43px"
+        />
+      </a>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const slides = document.getElementById("slides");
+      const totalSlides = slides.children.length;
+
+      function showSlide(index) {
+        const offset = -index * 100;
+        slides.style.transform = `translateX(${offset}%)`;
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      setInterval(nextSlide, 3000);
+    </script>
+  </body>
+</html>

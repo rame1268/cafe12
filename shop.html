@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Menu</title>
+    <style>
+      body {
+        background-color: rgb(119, 81, 31);
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+      }
+
+      .header {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #b86b35;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-weight: bold;
+        z-index: 999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 60px;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        max-width: 280px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 16px;
+      }
+
+      .product-card h2 {
+        font-size: 1.3rem;
+        margin: 0 0 8px;
+        color: #442c2e;
+      }
+
+      .product-card p {
+        font-size: 0.9rem;
+        color: #7a6e6e;
+        margin-bottom: 12px;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #b86b35;
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+      }
+
+      .add-to-cart-btn {
+        background-color: #b86b35;
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #9d5525;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Cart: <span id="cartCount">0</span></div>
+
+    <div class="container">
+      <!-- Card 1 -->
+      <div class="product-card">
+        <img src="coffee2.jpg" alt="Coffee" />
+        <h2>Hazelnut Brew</h2>
+        <p>Nutty, smooth, and subtly sweet. Your perfect morning cup.</p>
+        <div class="price">$5.49</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <img src="coffee1.jpg" alt="Coffee" />
+        <h2>Espresso Shot</h2>
+        <p>Strong and bold with deep crema. Small cup, big energy.</p>
+        <div class="price">$3.25</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <img src="coffee3.jpg" alt="Coffee" />
+        <h2>Iced Caramel Latte</h2>
+        <p>Chilled espresso, milk & caramel drizzle. Sweet and refreshing.</p>
+        <div class="price">$4.75</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <img src="coffee4.jpg" alt="Coffee" />
+        <h2>Mocha Delight</h2>
+        <p>Dark chocolate + espresso + milk. The cozy combo.</p>
+        <div class="price">$4.99</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <img src="coffee5.jpg" alt="Coffee" />
+        <h2>Macchiato</h2>
+        <p>Bold espresso with a dollop of steamed milk foam.</p>
+        <div class="price">$3.95</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card">
+        <img src="coffee6 (2).jpg" alt="Coffee" />
+        <h2>Flat White</h2>
+        <p>Smooth espresso and velvety microfoam in perfect balance.</p>
+        <div class="price">$4.35</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card">
+        <img src="coffee7.jpg" alt="Coffee" />
+        <h2>Cold Brew</h2>
+        <p>Slow-steeped for 20 hours. Smooth, less acidic, ice-cold.</p>
+        <div class="price">$4.20</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="product-card">
+        <img src="coffee8.jpg" alt="Coffee" />
+        <h2>Pumpkin Spice</h2>
+        <p>Seasonal favorite with cinnamon, nutmeg, and espresso magic.</p>
+        <div class="price">$5.25</div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <script>
+      let cartCount = 0;
+      const cartDisplay = document.getElementById("cartCount");
+      const buttons = document.querySelectorAll(".add-to-cart-btn");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          cartCount++;
+          cartDisplay.textContent = cartCount;
+        });
+      });
+    </script>
+  </body>
+</html>
